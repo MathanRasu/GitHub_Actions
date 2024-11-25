@@ -1,0 +1,12 @@
+name: TestGitHub_Action
+on:  push
+
+
+jobs:  
+  testJob:
+    runs-on: ubuntu-latest
+
+
+    steps:
+    - name: print test
+      run:  echo "print Test"
