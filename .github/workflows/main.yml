@@ -12,3 +12,12 @@ jobs:
  
       - name: Display file content
         run: cat test.txt
+
+
+      - name: Checkout code
+        uses: action/checkout@v4
+        with:
+          repository:  MathanRasu/Terrafrom_AWS
+          token: ${{ secrets.TOKEN_VALUE }}
+          path: variables.tf
+          run: cat variables.tf
