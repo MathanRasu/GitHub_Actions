@@ -10,3 +10,7 @@ jobs:
     steps:
     - name: print test
       run:  echo "print Test"
+
+    - name: Display file content
+        run: print test.txt
+        
