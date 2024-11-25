@@ -12,5 +12,5 @@ jobs:
       run:  echo "print Test"
 
     - name: Display file content
-      run: print test.txt
+      run: test.txt
         
