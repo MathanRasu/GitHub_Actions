@@ -10,9 +10,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
  
-      - name: Display file content
-        run: cat test.txt
-
 
       - name: Checkout code
         uses: action/checkout@v4
