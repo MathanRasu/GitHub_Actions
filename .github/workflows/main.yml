@@ -1,16 +1,14 @@
 name: TestGitHub_Action
-on:  push
-
+on:
+  push
 
 jobs:  
   testJob:
     runs-on: ubuntu-latest
 
-
-    steps:
-    - name: print test
-      run:  echo "print Test"
-
-    - name: Display file content
-      run: test.txt
-        
+    steps: 
+      - name: Checkout code
+        uses: actions/checkout@v4
+ 
+      - name: Display file content
+        run: cat test.txt
