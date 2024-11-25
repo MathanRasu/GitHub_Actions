@@ -7,14 +7,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps: 
+      # Step 1: Checkout the current repository
       - name: Checkout code
         uses: actions/checkout@v4
- 
 
-      - name: Checkout code
-        uses: action/checkout@v4
+      # Step 2: Checkout another repository
+      - name: Checkout another repository
+        uses: actions/checkout@v4
         with:
-          repository:  MathanRasu/Terrafrom_AWS
-          token: ${{ secrets.TOKEN_VALUE }}
-          path: variables.tf
-          run: cat variables.tf
+          repository: MathanRasu/Terrafrom_AWS 
+          token: ${{ secrets.TOKEN_VALUE }}    
+          path: other-repo                    
+
+      # Step 3: Display the file content
+      - name: Display file content
+        run: cat other-repo/variables.tf      
