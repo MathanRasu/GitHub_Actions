@@ -1,0 +1,26 @@
+name: gihubWorkflow
+on:
+  workflow_dispatch:
+
+jobs:
+  Build-image:
+    runs-on: ubuntu-latest
+    steps:  
+      - name:  First Step on Build image
+        run:  |
+              echo "First Image"
+  Unit-Test:
+    runs-on:  ubuntu-latest
+    steps:  
+      - name:  Second Step on Build Image  
+        run:  echo "Second Image"
+
+  Publish-image-staging:
+    runs-on:  ubuntu-latest
+    if:  $({always()})
+    needs:
+      - Build-image
+      - Unit-Test
+    steps:
+      - name : Publishing image
+        run:  echo "Publishing Image" 
